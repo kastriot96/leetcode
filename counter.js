@@ -9,7 +9,7 @@
 //     console.log(output);
 //   };
   
-//   createCounter(10);
+//   createCounter(10)
 
  const createCounter = (n) => {
     let num = n - 1;
