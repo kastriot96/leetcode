@@ -17,9 +17,3 @@ In practical terms, if you called the original function like sum(1,2,3), you wou
 
     };
 };
-
-/**
- * function sum(a, b) { return a + b; }
- * const csum = curry(sum);
- * csum(1)(2) // 3
- */
