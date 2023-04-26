@@ -12,8 +12,19 @@ In practical terms, if you called the original function like sum(1,2,3), you wou
  * @param {Function} fn
  * @return {Function}
  */
- var curry = function(fn) {
-    return function curried() {
-
+ const curry =(fn) =>{
+    return curried = (...args) => {
+        if (fn.length !== args.length){
+            console.log('fn.length', fn.length);
+            console.log('args.length', args.length);
+            return curried.bind(null, ...args)
+        }
+    return fn(...args);
     };
-};
+}
+
+const totalNum=(x,y,z,m) => {
+    return x+y+z+m 
+} 
+const curriedTotal = curry(totalNum);
+console.log(curriedTotal(1) (2) (3) (4));
