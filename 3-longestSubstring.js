@@ -13,3 +13,5 @@ substring
  var lengthOfLongestSubstring = function(s) {
     
 };
+
+console.log('hi');
