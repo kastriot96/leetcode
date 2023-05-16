@@ -15,10 +15,8 @@ You can return the answer in any order.
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-      target = 1
-      // To store the required sum
-      var sum = 0;
-      var i, j;
+      //need to create an array where sum for each i,j is stored
+      // then when the target === sum[i][j] true return i && j
          
       // Nested loop for all possible pairs
       for(i = 0; i <= nums.length - 1; i++)
