@@ -13,9 +13,15 @@ The overall run time complexity should be O(log (m+n)).
  */
  var findMedianSortedArrays = function(nums1, nums2) {
     let mergedArray = [...nums1, ...nums2];
-    return mergedArray;
-    //median is the middle number of array when is odd , or the average of two numbers when numbers of elements are even.
-    //check if mergedArray is odd , if is odd return middle num , else if the array is even return average of two middle numbers
+    let lengthArr = mergedArray.length;
+    if (lengthArr % 2 === 0) {
+        console.log('this is even');
+    } else {
+        let indexOdd = Math.ceil(lengthArr / 2);
+        let median = mergedArray[indexOdd];
+        console.log('this is odd',median);
+    }
+    return lengthArr;
 };
 
-console.log(findMedianSortedArrays([1,2],[3]));
+console.log(findMedianSortedArrays([1,2,5,2,3,4,4],[3,7]));
