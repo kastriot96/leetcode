@@ -19,6 +19,11 @@ string convert(string s, int numRows);
  * @param {number} numRows
  * @return {string}
  */
-var convert = function(s, numRows) {
-    
+ var convert = function(s, numRows) {
+     let lengthOfS = s.length;
+    //set the letter with index[numRows + 1] next to letter with index[numRows-1]
+    //set the letter with index[numRows + 2] next to letter with
+    //index[numRows-2]
 };
+
+console.log(convert('PAYPALISHIRING', 4));
