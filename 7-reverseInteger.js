@@ -22,6 +22,7 @@ Assume the environment does not allow you to store 64-bit integers (signed or un
     } else {
         return myArrRev.join("");
     }
+  //add another if block and check if myArrRev[0] === "-" then start splice from 1 and if  myArrRev[0] === "-" && myArrRev[1] === 0 start splice from 2
 };
 
 console.log(reverse(-231));
