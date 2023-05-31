@@ -22,5 +22,6 @@ Do not ignore any characters other than the leading whitespace or the rest of th
  * @return {number}
  */
 var myAtoi = function(s) {
-    
+    //split every word and store that into an array , the split should be done by spaces( ) 
+    //check if the start is a numbers if yes then filter that and store in a variable
 };
