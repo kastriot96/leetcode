@@ -21,7 +21,16 @@ Do not ignore any characters other than the leading whitespace or the rest of th
  * @param {string} s
  * @return {number}
  */
-var myAtoi = function(s) {
-    //split every word and store that into an array , the split should be done by spaces( ) 
-    //check if the start is a numbers if yes then filter that and store in a variable
-};
+const myAtoi = (str) => {
+    let parsed = parseInt(str, 10)
+
+    if (isNaN(parsed)) {
+        return 0
+    } else if (parsed >= Math.pow(2, 31)) {
+        return Math.pow(2, 31) - 1   
+    } else if (parsed <= Math.pow(-2, 31)) {
+        return Math.pow(-2, 31)
+    } else {
+        return parsed
+    }
+}
