@@ -13,13 +13,33 @@ The matching should cover the entire input string (not partial).
  * @param {string} p
  * @return {boolean}
  */
- var isMatch = function(s, p) {
-    s = '123';
-    p = 'abc';
-    return s + p
-    //case 1 | check if very character of 's' matches with every character of 'p'
-    //case 2 | check if for given characters of 's' and given pattern of 'p' there is aleast 1 character after the pattern char ( meaning exact char what is defined on p)
-    //case 3 | check if for given charaters of 's' there are more one or more chars after the given 'p' condition with (.*)
-};
+function isMatch(str, pat) {
+    return recursiveIsMatch(0, 0, str, pat);
+}
+function recursiveIsMatch(i, j, str, pat) {
+    const inputStringLength = str.length;
+    const patternLength = pat.length;
 
-console.log(isMatch());
+    if (j == patternLength) {
+        return i == inputStringLength;
+    }
+
+    if (j + 1 < patternLength && pat.charAt(j + 1) == '*') {
+        if (recursiveIsMatch(i, j + 2, str, pat)) return true;
+
+        while (
+            i < inputStringLength &&
+            (pat.charAt(j) == '.' || str.charAt(i) == pat.charAt(j))
+        ) {
+            if (recursiveIsMatch(++i, j + 2, str, pat)) return true;
+        }
+    }
+    else if (
+        i < inputStringLength &&
+        (pat.charAt(j) == '.' || str.charAt(i) == pat.charAt(j))
+    ) {
+        return recursiveIsMatch(i + 1, j + 1, str, pat);
+    }
+
+    return false;
+}
