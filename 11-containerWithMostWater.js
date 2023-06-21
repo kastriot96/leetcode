@@ -15,6 +15,10 @@ Notice that you may not slant the container.
  * @return {number}
  */
 var maxArea = function(height) {
+    let maxHeight = 0;
+    let maxEl = height.forEach((el) => Math.max(el));
+    let sum = height.reduce((a,c) => a + c , 0));
+    let difference = sum - maxElSum;
     //for the highest height than can fit , find the minimum of vertical lines
     //for the maximum find total vertical lines
     //for the maximum capacity multiply height x totalLines
