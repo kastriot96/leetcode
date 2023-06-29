@@ -26,5 +26,7 @@ Given an integer, convert it to a roman numeral.
  * @return {string}
  */
 var intToRoman = function(num) {
-    
+    //split the num with modulus for example 3416 = 3000 + 400 + 10 + 6
+    //check again if every 'new' number is splittable example 
+    // 3000 > MMM + 400 > CD + 10 > X + 6 > 5 + 1 = V + I
 };
