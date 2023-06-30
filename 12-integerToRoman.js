@@ -25,8 +25,31 @@ Given an integer, convert it to a roman numeral.
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function(num) {
-    //split the num with modulus for example 3416 = 3000 + 400 + 10 + 6
-    //check again if every 'new' number is splittable example 
-    // 3000 > MMM + 400 > CD + 10 > X + 6 > 5 + 1 = V + I
+var romanToInt = function(s) {
+
+    const sym = { 
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+
+    let result = 0;
+
+    for (let i=0; i < s.length; i++){
+        const cur = sym[s[i]];
+        const next = sym[s[i+1]];
+
+        if (cur < next){
+            result += next - cur // IV -> 5 - 1 = 4
+            i++
+        } else {
+            result += cur
+        }
+    }
+
+    return result; 
 };
