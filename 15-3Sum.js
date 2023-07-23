@@ -40,5 +40,5 @@ Explanation: The only possible triplet sums up to 0.
 var threeSum = function(nums) {
     //modify the array in such way to get another array of non repeating elements
     //modifiedArray should have atleast three elements , 
-    //in such way there should be at least one combination to sum=0 of the elements.
+    //in such way there should be at least one combination to sum=0 of the elements
 };
