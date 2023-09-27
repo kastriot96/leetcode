@@ -37,8 +37,16 @@ Explanation: The only possible triplet sums up to 0.
  * @param {number[]} nums
  * @return {number[][]}
  */
-var threeSum = function(nums) {
-    //modify the array in such way to get another array of non repeating elements
-    //modifiedArray should have atleast three elements , 
-    //in such way there should be at least one combination to sum=0 of the elements
+ const threeSum = function(nums) {
+     for(i = 0; i <= nums.length; i++) {
+         if (nums[i] !== nums[i + 1] && nums[i] !== nums[i -1]) {
+             let sum = nums[i] + nums[i-1] + nums[i+1];
+             if (sum == 0) {
+                console.log(`The array is ${nums[i-1]}, ${nums[i]}, ${nums[i+1]}`);
+             }
+         } else {
+             console.log('such number does not exist');
+         }
+     }
 };
+
