@@ -37,16 +37,47 @@ Explanation: The only possible triplet sums up to 0.
  * @param {number[]} nums
  * @return {number[][]}
  */
- const threeSum = function(nums) {
-     for(i = 0; i <= nums.length; i++) {
-         if (nums[i] !== nums[i + 1] && nums[i] !== nums[i -1]) {
-             let sum = nums[i] + nums[i-1] + nums[i+1];
-             if (sum == 0) {
-                console.log(`The array is ${nums[i-1]}, ${nums[i]}, ${nums[i+1]}`);
-             }
-         } else {
-             console.log('such number does not exist');
-         }
-     }
+//  const threeSum = function(nums) {
+//      for(i = 0; i <= nums.length; i++) {
+//          if (nums[i] !== nums[i + 1] && nums[i] !== nums[i -1]) {
+//              let sum = nums[i] + nums[i-1] + nums[i+1];
+//              if (sum == 0) {
+//                 console.log(`The array is ${nums[i-1]}, ${nums[i]}, ${nums[i+1]}`);
+//              }
+//          } else {
+//              console.log('such number does not exist');
+//          }
+//      }
+// };
+
+//secodn solution 
+
+var threeSum = function (nums) {
+    nums.sort((a, b) => a - b);
+    const n = nums.length;
+    const triplets = [];
+    for (let i = 0; i < n; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) {
+            continue;
+        }
+        // Left and right pointers
+        let j = i + 1;
+        let k = n - 1;
+
+        while (j < k) {
+            if (nums[i] + nums[j] + nums[k] === 0) {
+                triplets.push([nums[i], nums[j], nums[k]]);
+                j++;
+                while (j < k && nums[j] === nums[j - 1]) {
+                    j++;
+                }
+            } else if (nums[i] + nums[j] + nums[k] < 0) {
+                j++;
+            } else {
+                k--;
+            }
+        }
+    }
+    return triplets;
 };
 
